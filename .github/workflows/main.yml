@@ -1,18 +1,33 @@
-name: Hello Goodbye Workflow
+# name: Hello Goodbye Workflow
 
-on:
-    push:
+# on:
+#     push:
+
+# jobs:
+#   say_hello:
+
+#     runs-on: ubuntu-latest
+#     steps:
+#       - name: Say Hello
+#         run: echo "Hello!"
+
+#   say_goodbye:
+#     runs-on: ubuntu-latest
+#     steps:
+#       - name: Say Goodbye
+#         run: echo "Goodbye!"
+
+
+name: User action
+
+on: push
 
 jobs:
-  say_hello:
-
+  test:
     runs-on: ubuntu-latest
     steps:
-      - name: Say Hello
-        run: echo "Hello!"
+      - name: Checkout code # clone the repo
+        uses: actions/checkout@v4
 
-  say_goodbye:
-    runs-on: ubuntu-latest
-    steps:
-      - name: Say Goodbye
-        run: echo "Goodbye!"
+      - name: List files
+        run: ls
